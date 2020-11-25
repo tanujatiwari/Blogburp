@@ -1,0 +1,41 @@
+.doodle{
+    width:100%;
+    height: 25%;
+}
+
+img{
+	filter:grayscale(100%);
+}
+
+.introContent2
+{
+	margin:auto;
+	padding: 17vh 0;
+}
+
+.jumbotron{
+	background-color: white;
+}
+
+@media screen and (min-width: 1px) {
+  .subheading {
+    font-size: 15px;
+  }
+	
+	.introContent{
+    margin:auto;
+	  padding-bottom: 17vh;
+		padding-top:20vh;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .introContent{
+    margin:auto;
+	padding-top: 25vh;
+	padding-bottom:20vh;
+  }
+	.subheading{
+		font-size: 20px;
+	}
+}

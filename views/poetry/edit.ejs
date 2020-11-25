@@ -1,0 +1,29 @@
+<%- include("../partials/header") %>
+
+
+<div class="d-flex justify-content-center">
+	<form action="/poetry/<%=poetry._id%>?_method=PUT" method="POST"  class="form py-3">
+		<h1 class="mb-4">Edit "<%=poetry.title%>"</h1>
+		<div class="form-group">
+			<label><b>Title</b></label>
+			<input type="text" name="poetry[title]" class="form-control" value="<%=poetry.title%>" required>
+		</div>
+		<div class="form-group">
+			<label><b>Quote</b></label>
+			<input type="text" name="poetry[quote]" class="form-control" value="<%=poetry.quote%>" required>
+			<small class="form-text text-muted">It should be small and crispy.</small>
+		</div>
+		<div class="form-group">
+			<label><b>Poem</b></label>
+			<textarea class="form-control poetry-textarea" name="poetry[poem]" required>
+				<%=poetry.poem%>
+			</textarea>
+		</div>
+		<div>
+			<button type="submit" class="btn btn-dark">Submit</button>
+			<a href="/poetry/<%=poetry._id%>" class="btn btn-dark">Back to poetry</a>
+		</div>
+	</form>
+</div>
+<hr>
+<%- include("../partials/footer") %>

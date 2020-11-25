@@ -1,0 +1,31 @@
+<%- include("../partials/header") %>
+
+ <div class="jumbotron px-0 introContent">
+	<h1 class="display-4 text-center">STORIES</h1>
+	<p class="lead text-center">“If there's a book that you want to read, but it hasn't been written yet, then you must write it.”
+― Toni Morrison</p>
+	<% if(currentUser && currentUser.username===process.env.ADMIN){ %>
+		<div class="text-center">
+			<a href="/series/new" type="button" class="btn btn-dark">Add Series</a>
+		</div>
+	<%}%>
+</div>
+
+<div class="container">
+	<hr style="width:75%;">
+	<%for(var i=0;i<series.length;i++){ %>
+	<a href="/series/<%=series[i]._id%>">
+		<div class="row story-container">
+			<div class="col-md-12 my-5 py-3">
+				<div class="d-flex justify-content-center align-items-center flex-column">
+					<h3><%=series[i].title%></h3>
+					<p><%=series[i].desc%></p>
+				</div>
+			</div>
+		</div>
+	</a>
+	<% } %>	
+	<hr style="width:75%;">
+</div>
+
+<%- include("../partials/footer") %>

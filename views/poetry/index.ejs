@@ -1,0 +1,35 @@
+<%- include("../partials/header") %>
+
+ <div class="poetry-container container">
+	<div class="jumbotron px-0 introContent">
+		<h1 class="display-4 text-center">POETRY</h1>
+		<p class="lead text-center">“He who draws noble delights from sentiments of poetry is a true poet, though he has never written a line in all his life.” — George Sand</p>
+		<% if(currentUser && currentUser.username===process.env.ADMIN){ %>
+			<div class="text-center">
+				<a href="/poetry/new" type="button" class="btn btn-dark">Add Poetry</a>
+			</div>
+		<%}%>
+	</div>
+</div>
+
+<hr>
+<section>
+	<div class="row">
+		<%poetry.forEach(function(poem){ %>
+		<div class="col-md-4 poetry-size mx-auto d-flex align-items-center justify-content-center">
+				<div>
+					<a href="/poetry/<%=poem._id%>">
+						<div class="quote">
+							<h4 class="text-center"><%=poem.title%></h4>
+							<p class="lead"><%=poem.quote%></p>
+						</div>
+					</a>
+				</div>
+			</div>
+		<% }) %>
+	</div>
+</section>
+<hr>
+
+
+<%- include("../partials/footer") %>

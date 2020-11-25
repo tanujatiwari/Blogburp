@@ -1,0 +1,53 @@
+<%- include("../partials/header") %>
+
+<div class="container my-5 series-container">
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<div class=" text-center">
+				<h1 class="display-4" class=" mt-4"><%=series.title%></h1>
+				<h4 class=" mt-5 text-muted"><em><%=series.desc%></em></h4>
+				<% if(currentUser && series.author.id.equals(currentUser._id)){ %>
+					<a href="/series/<%=series._id%>/edit" class="btn hover-button">Edit</a>
+					<form action="/series/<%=series._id%>?_method=DELETE" method="POST" style="display : inline;">
+						<button class="btn hover-button">Delete</button>
+					</form>
+				<%}%>
+			</div>
+			<div class="series-body my-5">
+				<p><%-series.body%></p>	
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="mt-5">
+		<a class="btn btn-dark btn-sm pull-right" href="/series/<%=series._id%>/comments/new">Add a comment</a>
+	</div>
+	
+	<div class="ui comments">
+		<h3 class="ui dividing header">Reviews</h3>
+		<% if(series.comments.length===0){ %>
+			<h6>
+				<em>No reviews yet...Be the first one to add a comment!</em>
+			</h6>
+		<% } else { %>
+		<% series.comments.forEach(function(comment){ %>
+		<div class="comment my-3">
+			<span class="avatar"><img src="https://img.icons8.com/doodle/48/000000/user-male--v1.png" style="filter:none;"/></span>
+			<div class="content">
+				<span class="author"><%=comment.author.username%></span>
+				<div class="text"><%=comment.text%></div>
+				<% if(currentUser && (comment.author.id.equals(currentUser._id) || currentUser.username===process.env.ADMIN)){ %>
+					<button class="btn btn-light">
+						<a class="reply" href="<%=series._id%>/comments/<%=comment._id%>/edit">Edit</a>
+					</button>
+						<form action="/series/<%=series._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST" style="display:inline;">
+							<button onclick="confirmation()" class="btn btn-light">Delete</button>
+						</form>
+				<%}%>
+			</div>
+		</div>
+		<% }); }%>
+	</div>
+</div>
+
+<%- include("../partials/footer") %>

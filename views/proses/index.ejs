@@ -1,0 +1,31 @@
+<%- include("../partials/header") %>
+
+<div class="prose-container container">
+	<div class="jumbotron px-0 introContent">
+		<h1 class="display-4 text-center">PROSES</h1>
+		<p class="lead text-center">"Work on good prose has three steps: a musical stage when it is composed, an architectonic one when it is built, and a textile one when it is woven." -
+	Walter Benjamin</p>
+		<% if(currentUser && currentUser.username===process.env.ADMIN){ %>
+			<div class="text-center">
+				<a href="/proses/new" type="button" class="btn btn-dark">Add Prose</a>
+			</div>
+		<%}%>
+	</div>
+	<hr>
+	<% proses.forEach(function(prose){ %>
+		<a href="/proses/<%=prose._id%>">
+			<div class="prose-container-2">
+				<div class="row my-5 py-3 text-center">
+					<div class="col-md-12 my-3">
+						<div class=" d-flex flex-column align-items-center justify-content-center">
+							<h3><%=prose.title%></h3>
+							<p class="mt-2"><%=prose.desc%></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</a>
+	<% }); %>
+	<hr>
+</div>
+<%- include("../partials/footer") %>

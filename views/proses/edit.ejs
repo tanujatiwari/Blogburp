@@ -1,0 +1,25 @@
+<%- include("../partials/header") %>
+
+<div class="d-flex justify-content-center">
+	<form action="/proses/<%=prose._id%>?_method=PUT" method="POST" class="form py-3">
+		<h1 class="mb-4">Edit "<%=prose.title%>"</h1>
+		<div class="form-group">
+			<label><b>Title</b></label>
+			<input type="text" name="prose[title]" class="form-control" value="<%=prose.title%>" required>
+		</div>
+		<div class="form-group">
+			<label><b>Description</b></label>
+			<input type="text" name="prose[desc]" class="form-control" value="<%=prose.desc%>" required>
+		</div>
+		<div class="form-group">
+			<label><b>Body</b></label>
+			<textarea class="form-control textarea" name="prose[body]" required><%=prose.body%></textarea>
+		</div>
+		<div>
+			<button type="submit" class="btn btn-dark">Submit</button>
+			<a href="/proses/<%=prose._id%>" class="btn btn-dark">Back to prose</a>
+		</div>
+	</form>
+</div>
+<hr>
+<%- include("../partials/footer") %>

@@ -1,0 +1,24 @@
+<%- include("../partials/header") %>
+
+<div class="d-flex justify-content-center">
+	<form action="/series" method="POST" class="form py-3">
+		<h1 class="mb-4">Add Series</h1>
+		<div class="form-group">
+			<label><b>Title</b></label>
+			<input type="text" name="series[title]" placeholder="title"  class="form-control">
+		</div>
+		<div class="form-group">
+			<label><b>Desciption</b></label><input type="text" name="series[desc]" placeholder="description of the series"  class="form-control">
+		</div>
+		<div class="form-group">
+			<label><b>Body</b></label><textarea  name="series[body]"  class="form-control textarea"></textarea>
+		</div>
+		<div>
+			<button type="submit" class="btn btn-dark">Submit</button>
+			<a href="/series" class="btn btn-dark">Back to series</a>
+		</div>
+	</form>
+</div>
+<hr>
+
+<%- include("../partials/footer") %>
