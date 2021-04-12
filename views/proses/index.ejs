@@ -5,7 +5,7 @@
 		<h1 class="display-4 text-center">PROSES</h1>
 		<p class="lead text-center">"Work on good prose has three steps: a musical stage when it is composed, an architectonic one when it is built, and a textile one when it is woven." -
 	Walter Benjamin</p>
-		<% if(currentUser && currentUser.username===process.env.ADMIN){ %>
+		<% if(currentUser){ %>
 			<div class="text-center">
 				<a href="/proses/new" type="button" class="btn btn-dark">Add Prose</a>
 			</div>

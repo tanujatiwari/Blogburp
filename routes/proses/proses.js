@@ -15,11 +15,11 @@ var middleware = require("../../middleware");
 
 //NEW and CREATE
 
-	router.get("/proses/new",middleware.isDeveloper,function(req,res){
+	router.get("/proses/new",middleware.isLoggedIn,function(req,res){
 		res.render("proses/new");
 	});
 	
-	router.post("/proses",middleware.isDeveloper,function(req,res){
+	router.post("/proses",middleware.isLoggedIn,function(req,res){
 		var title = req.body.prose.title;
 		var desc = req.body.prose.title;
 		var body = req.body.prose.body;
