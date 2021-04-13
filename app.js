@@ -27,7 +27,7 @@ app.use(bodyparser.urlencoded({extended : true}));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-var url = process.env.DBURL || "mongodb://localhost:27017/frippy2";
+var url = process.env.DBURL;
 mongoose.connect(url,{useNewUrlParser : true, useUnifiedTopology: true});
 
 //PASSPORT CONFIG

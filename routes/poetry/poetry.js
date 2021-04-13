@@ -14,11 +14,11 @@ var middleware = require("../../middleware")
 	});
 
 //NEW and CREATE
-	router.get("/poetry/new",middleware.isDeveloper,function(req,res){
+	router.get("/poetry/new",middleware.isLoggedIn,function(req,res){
 		res.render("poetry/new");
 	});
 	
-	router.post("/poetry",middleware.isDeveloper,function(req,res){
+	router.post("/poetry",middleware.isLoggedIn,function(req,res){
 		var title = req.body.poetry.title;
 		var quote = req.body.poetry.quote;
 		var poem = req.body.poetry.poem;

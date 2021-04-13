@@ -4,7 +4,7 @@
 	<div class="jumbotron px-0 introContent">
 		<h1 class="display-4 text-center">POETRY</h1>
 		<p class="lead text-center">“He who draws noble delights from sentiments of poetry is a true poet, though he has never written a line in all his life.” — George Sand</p>
-		<% if(currentUser && currentUser.username===process.env.ADMIN){ %>
+		<% if(currentUser){ %>
 			<div class="text-center">
 				<a href="/poetry/new" type="button" class="btn btn-dark">Add Poetry</a>
 			</div>

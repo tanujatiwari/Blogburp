@@ -14,11 +14,11 @@ var middleware = require("../../middleware");
 	});
 
 //NEW and CREATE
-	router.get("/series/new",middleware.isDeveloper,function(req,res){
+	router.get("/series/new",middleware.isLoggedIn,function(req,res){
 		res.render("series/new");
 	});
 	
-	router.post("/series",middleware.isDeveloper,function(req,res){
+	router.post("/series",middleware.isLoggedIn,function(req,res){
 		var title = req.body.series.title;
 		var body = req.body.series.body;
 		var desc = req.body.series.desc;

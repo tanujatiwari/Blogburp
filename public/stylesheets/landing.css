@@ -11,6 +11,11 @@ img{
 {
 	margin:auto;
 	padding: 17vh 0;
+	height:100vh;
+	display:flex;
+	justify-content:center;
+	flex-direction:column;
+	width:100% !important;
 }
 
 .jumbotron{
