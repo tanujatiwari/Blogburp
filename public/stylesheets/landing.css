@@ -3,10 +3,6 @@
     height: 25%;
 }
 
-img{
-	filter:grayscale(100%);
-}
-
 .introContent2
 {
 	margin:auto;

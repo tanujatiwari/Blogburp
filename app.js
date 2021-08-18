@@ -14,28 +14,28 @@ var express = require("express"),
 	methodOverride = require("method-override");
 
 var poetryComments = require("./routes/poetry/comments"),
-    poetryRoutes   = require("./routes/poetry/poetry"),
-    prosesComents  = require("./routes/proses/comments"),
-    prosesRoutes   = require("./routes/proses/proses"),
-    seriesComments = require("./routes/series/comments"),
-    seriesRoutes   = require("./routes/series/series"),
-	indexRoutes    = require("./routes/index");
+	poetryRoutes = require("./routes/poetry/poetry"),
+	prosesComents = require("./routes/proses/comments"),
+	prosesRoutes = require("./routes/proses/proses"),
+	seriesComments = require("./routes/series/comments"),
+	seriesRoutes = require("./routes/series/series"),
+	indexRoutes = require("./routes/index");
 
-app.set("view engine","ejs");
+app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
-app.use(bodyparser.urlencoded({extended : true}));
+app.use(bodyparser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(flash());
 
 var url = process.env.DBURL;
-mongoose.connect(url,{useNewUrlParser : true, useUnifiedTopology: true});
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //PASSPORT CONFIG
 
 app.use(require("express-session")({
-	secret : "Its all in the mind",
-	resave : false,
-	saveUninitialized : false
+	secret: "Its all in the mind",
+	resave: false,
+	saveUninitialized: false
 }));
 
 app.use(passport.initialize());
@@ -44,7 +44,7 @@ passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.use(function(req,res,next){
+app.use(function (req, res, next) {
 	res.locals.currentUser = req.user;
 	res.locals.error = req.flash("error");
 	res.locals.success = req.flash("success");
@@ -61,6 +61,6 @@ app.use(seriesComments);
 
 //=================================================================
 
-app.listen(process.env.PORT || 1000, function() {
-    console.log("Server started");
+app.listen(process.env.PORT || 3000, function () {
+	console.log("Server started");
 });
