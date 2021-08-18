@@ -107,49 +107,29 @@ hr{
 	box-shadow: 0 20px 20px -20px #333;
 }
 
-
 i{
 	margin-left: 1rem;
 	margin-right: 1rem;
 }
 
-/*dropdown hover*/
-@media screen and (min-width: 768px){
-  .dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu{
-        display: block;
-    }
-    .dropdown-menu{
-        margin-top: 0;
-    }
-    .dropdown-toggle{
-        margin-bottom: 2px;
-    }
-    .navbar .dropdown-toggle, .nav-tabs .dropdown-toggle{
-        margin-bottom: 0;
-    }
+.doodle{
+    width:100%;
+    height: 25%;
 }
 
-/* footer */
-@media screen and (min-width: 1px) {
-  div.footer {
-    text-align:center;
-  }
+.introContent2
+{
+	margin:auto;
+	padding: 17vh 0;
+	height:100vh;
+	display:flex;
+	justify-content:center;
+	flex-direction:column;
+	width:100% !important;
 }
 
-@media screen and (min-width:768px){
-	.series-body, .prose-body{
-		font-size:2.0rem;
-	}
-	
-	.series-container, .prose-container, .poetry-container, .story-container{
-		width:75%;
-	}
-}
-
-@media screen and (min-width:1px){
-	.series-body, .prose-body{
-		font-size:1.5rem;
-	}
+.jumbotron{
+	background-color: white;
 }
 
 nav{
@@ -161,7 +141,6 @@ nav{
 	height:230px;
 	text-align: center;
 }
-
 
 .prose-container-2 h3{
 	margin:0;
@@ -214,3 +193,50 @@ nav{
 .textarea{
 	height: 700px;
 }
+
+/* footer */
+@media screen and (min-width: 1px) {
+	div.footer {
+		text-align:center;
+	}
+	.subheading {
+		font-size: 15px;
+	}	
+	.introContent{
+		margin:auto;
+		padding-bottom: 17vh;
+		padding-top:20vh;
+	}
+	.series-body, .prose-body{
+		font-size:1.5rem;
+	}
+  }
+  
+  @media screen and (min-width:768px){
+	.series-body, .prose-body{
+		font-size:2.0rem;
+	}
+	.series-container, .prose-container, .poetry-container, .story-container{
+		width:75%;
+	}
+	.introContent{
+		margin:auto;
+		padding-top: 25vh;
+		padding-bottom:20vh;
+	}
+	.subheading{
+		font-size: 20px;
+	}
+	.dropdown:hover .dropdown-menu, .btn-group:hover .dropdown-menu{
+        display: block;
+    }
+    .dropdown-menu{
+        margin-top: 0;
+    }
+    .dropdown-toggle{
+        margin-bottom: 2px;
+    }
+    .navbar .dropdown-toggle, .nav-tabs .dropdown-toggle{
+        margin-bottom: 0;
+    }
+  }
