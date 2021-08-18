@@ -6,11 +6,9 @@
 			<p class="lead text-center">"Work on good prose has three steps: a musical stage when it is composed, an
 				architectonic one when it is built, and a textile one when it is woven." -
 				Walter Benjamin</p>
-			<% if(currentUser){ %>
-				<div class="text-center">
-					<a href="/proses/new" type="button" class="btn btn-dark">Add Prose</a>
-				</div>
-				<%}%>
+			<div class="text-center">
+				<a href="/proses/new" type="button" class="btn btn-dark">Add Prose</a>
+			</div>
 		</div>
 		<hr>
 		<% proses.forEach(function(prose){ %>
