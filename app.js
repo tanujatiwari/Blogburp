@@ -6,10 +6,6 @@ var express = require("express"),
 	flash = require("connect-flash"),
 	passport = require("passport"),
 	localStrategy = require("passport-local"),
-	Poetry = require("./models/poetry"),
-	Proses = require("./models/proses"),
-	Series = require("./models/series"),
-	Comment = require("./models/comment"),
 	User = require("./models/user"),
 	methodOverride = require("method-override");
 
